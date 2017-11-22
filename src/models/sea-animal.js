@@ -1,23 +1,33 @@
 let items = [
   {
     id: 1,
-    name: 'Gorillas',
+    name: 'Sea Gorillas',
     count: 4
   },
   {
     id: 2,
-    name: 'Zebra',
+    name: 'Sea Zebra',
     count: 14
   },
   {
     id: 3,
-    name: 'Meercats',
+    name: 'Sea Meerkats',
     count: 26
   },
   {
     id: 4,
-    name: 'Lions',
+    name: 'Sea Lions',
     count: 5
+  },
+  {
+    id: 5,
+    name: 'Sea Giraffe',
+    count: 15
+  },
+  {
+    id: 6,
+    name: 'Sea Antelope',
+    count: 8
   }
 ]
 
@@ -42,6 +52,16 @@ const search = (query) => {
   query = query.toLowerCase()
   return items.filter(item => {
     return item.name.toLowerCase().indexOf(query) !== -1
+  }).slice().sort((a, b) => {
+    if (a.name < b.name) {
+      return -1
+    }
+    else if (a.name > b.name) {
+      return 1
+    }
+    else {
+      return 0
+    }
   })
 }
 

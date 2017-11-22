@@ -1,4 +1,5 @@
 module.exports = [
   require('./tickets'),
-  require('./animals')
+  require('./animals'),
+  require('./sea-animals')
 ]
